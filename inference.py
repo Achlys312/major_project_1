@@ -20,7 +20,7 @@ model.load_state_dict(checkpoint['model_state_dict'])
 model.eval()
 
 # Load the CSV file containing genre information
-train_csv = pd.read_csv('E:/Major Project/input/Multi_Label_dataset/train.csv')
+train_csv = pd.read_csv('Multi_Label_dataset/train.csv')
 genres = train_csv.columns.values[2:]
 
 # Define a transform to preprocess the input image
@@ -30,7 +30,7 @@ transform = transforms.Compose([
 ])
 
 # Load a single input image
-image_path = 'E:/Major Project/input/download.jpeg'  # Replace with the path to your input image
+image_path = 'download.jpeg'  # Replace with the path to your input image
 input_image = Image.open(image_path).convert('RGB')
 input_image = transform(input_image).unsqueeze(0).to(device)
 

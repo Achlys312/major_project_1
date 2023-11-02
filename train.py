@@ -22,7 +22,7 @@ optimizer = optim.Adam(model.parameters(), lr=lr)
 criterion = nn.BCELoss()
 
 # read the training csv file
-train_csv = pd.read_csv('E:/Major Project/input/Multi_Label_dataset/train.csv')
+train_csv = pd.read_csv('Multi_Label_dataset/train.csv')
 # train dataset
 train_data = ImageDataset(
     train_csv, train=True, test=False
@@ -67,7 +67,7 @@ torch.save({
             'model_state_dict': model.state_dict(),
             'optimizer_state_dict': optimizer.state_dict(),
             'loss': criterion,
-            }, 'E:/Major Project/input/outputs/model.pth')
+            }, 'outputs/model.pth')
 # plot and save the train and validation line graphs
 plt.figure(figsize=(10, 7))
 plt.plot(train_loss, color='orange', label='train loss')
@@ -75,5 +75,5 @@ plt.plot(valid_loss, color='red', label='validataion loss')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
 plt.legend()
-plt.savefig('E:/Major Project/input/outputs/loss.png')
+plt.savefig('outputs/loss.png')
 plt.show()

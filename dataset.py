@@ -58,7 +58,7 @@ class ImageDataset(Dataset):
         return len(self.image_names)
     
     def __getitem__(self, index):
-        image = cv2.imread(f"E:/Major Project/input/Multi_Label_dataset/Images/{self.image_names[index]}.jpg")
+        image = cv2.imread(f"Multi_Label_dataset/Images/{self.image_names[index]}.jpg")
         # convert the image from BGR to RGB color format
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         # apply image transforms
